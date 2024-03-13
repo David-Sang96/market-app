@@ -3,7 +3,6 @@
 import { message } from "antd";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getProductsForBar } from "../../apicalls/admin";
 import { getFilteredProducts } from "../../apicalls/public";
 import { setLoader } from "../../store/slices/loaderSlice";
 
@@ -28,7 +27,7 @@ const Filter = ({ setProducts, getProducts }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getProductsForBar();
+        const response = await getFilteredProducts();
         const dataFromServer = await response.json();
         if (dataFromServer.isSuccess) {
           setCategories(dataFromServer.productDocs);
