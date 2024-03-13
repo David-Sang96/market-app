@@ -31,7 +31,6 @@ export const getProductsForBar = async () => {
 };
 
 export const approveProduct = async (id) => {
-  // return apiCallProcess("post", `/admin/product-approve/${id}`);
   try {
     const response = await axiosInstance.post(`/admin/product-approve/${id}`, {
       validateStatus: () => true,
@@ -44,7 +43,6 @@ export const approveProduct = async (id) => {
 };
 
 export const rejectProduct = async (id) => {
-  // return apiCallProcess("post", `/admin/product-reject/${id}`);
   try {
     const response = await axiosInstance.post(`/admin/product-reject/${id}`, {
       validateStatus: () => true,
@@ -66,7 +64,6 @@ export const getAllUsers = async () => {
 };
 
 export const banUser = async (id) => {
-  // return apiCallProcess("post", `/admin/user-ban/${id}`);
   try {
     const response = await axiosInstance.post(`/admin/user-ban/${id}`, {
       validateStatus: () => true,

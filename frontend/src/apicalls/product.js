@@ -1,20 +1,6 @@
 import { axiosInstance } from "./axiosInstance";
 
-// const apiCallingProcess = async (method, route, payload = null) => {
-//   try {
-//     const response = await axiosInstance[method](route, payload, {
-//       validateStatus: () => true,
-//     });
-//     return response.data;
-//   } catch (error) {
-//     return error.message;
-//   }
-// };
-
-//sell product
-
 export const sellProduct = async (payload) => {
-  // return apiCallingProcess("post", "/create-product", payload);
   try {
     const response = await axiosInstance.post("/create-product", payload, {
       validateStatus: () => true,
@@ -27,7 +13,6 @@ export const sellProduct = async (payload) => {
 
 //get product
 export const getAllProducts = async (page, perPage) => {
-  // return apiCallingProcess("get", "/products");
   try {
     const response = await axiosInstance.get(
       `/products?page=${page}&perPage=${perPage}`,
@@ -43,7 +28,6 @@ export const getAllProducts = async (page, perPage) => {
 
 //get old product
 export const getOldProduct = async (id) => {
-  // return apiCallingProcess("get", `/products/${id}`);
   try {
     const response = await axiosInstance.get(`/products/${id}`, {
       validateStatus: () => true,
@@ -56,7 +40,6 @@ export const getOldProduct = async (id) => {
 
 //update product
 export const updateProduct = async (payload) => {
-  // return apiCallingProcess("put", "/update-product", payload);
   try {
     const response = await axiosInstance.put("/update-product", payload, {
       validateStatus: () => true,
@@ -69,7 +52,6 @@ export const updateProduct = async (payload) => {
 
 //delete product
 export const deleteProduct = async (id) => {
-  // return apiCallingProcess("delete", `/products/${id}`);
   try {
     const response = await axiosInstance.delete(`/products/${id}`, {
       validateStatus: () => true,
@@ -82,7 +64,6 @@ export const deleteProduct = async (id) => {
 
 //upload image
 export const uploadImage = async (payload) => {
-  // return apiCallingProcess("post", "/upload", formData);
   try {
     const response = await axiosInstance.post("/upload", payload, {
       validateStatus: () => true,
@@ -95,7 +76,6 @@ export const uploadImage = async (payload) => {
 
 //get saved product images
 export const getSavedImages = async (id) => {
-  // return apiCallingProcess("get", `/product-images/${id}`);
   try {
     const response = await axiosInstance.get(`/product-images/${id}`, {
       validateStatus: () => true,

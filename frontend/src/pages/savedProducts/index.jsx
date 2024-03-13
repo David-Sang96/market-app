@@ -24,7 +24,7 @@ const SavedProduct = () => {
         throw new Error(response.message);
       }
     } catch (error) {
-      console.error(error.message);
+      console.error();
       setSavedProducts([]);
     }
     dispatch(setLoader(false));
