@@ -31,8 +31,9 @@ const fileFilterConfig = (req, file, cb) => {
 };
 
 const app = express();
+
 //global middleware
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "https://market-app-frontend.onrender.com" }));
 app.use(bodyParser.json());
 
 app.use(
