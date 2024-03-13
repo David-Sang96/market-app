@@ -3,7 +3,7 @@
 import { message } from "antd";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getFilteredProducts } from "../../apicalls/public";
+import { getCategories, getFilteredProducts } from "../../apicalls/public";
 import { setLoader } from "../../store/slices/loaderSlice";
 
 const Filter = ({ setProducts, getProducts }) => {
@@ -27,12 +27,11 @@ const Filter = ({ setProducts, getProducts }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getFilteredProducts();
-        const dataFromServer = await response.json();
-        if (dataFromServer.isSuccess) {
-          setCategories(dataFromServer.productDocs);
+        const response = await getCategories();
+        if (response.isSuccess) {
+          setCategories(response.productDocs);
         } else {
-          throw new Error(dataFromServer.message);
+          throw new Error(response.message);
         }
       } catch (error) {
         message.error(error.message);

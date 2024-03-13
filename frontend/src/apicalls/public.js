@@ -27,3 +27,7 @@ export const getFilteredProducts = async (key, value) => {
 export const getProductById = async (id) => {
   return apiCallingProcess(`/api/product/${id}`);
 };
+
+export const getCategories = async () => {
+  return apiCallingProcess("/api/categories");
+};
