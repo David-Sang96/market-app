@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import Main from "./layouts/Main";
 import Details from "./pages/Details";
 import Home from "./pages/Home";
@@ -10,7 +10,7 @@ import SavedProduct from "./pages/savedProducts";
 import AuthProvider from "./providers/AuthProvider";
 
 function App() {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "",
       element: <Main />,
